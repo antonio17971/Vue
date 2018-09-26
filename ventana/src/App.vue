@@ -9,14 +9,14 @@
           </button>
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="#">Usuario <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Ventas<span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="#">Ventas<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Inventario<span class="sr-only">(current)</span></a>
