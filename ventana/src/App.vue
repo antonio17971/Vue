@@ -55,7 +55,7 @@
                 </div>
                 <div v-for="(articulo, index) in filteredArticulos" :key="index">
                       <ul v-show="verArticulos">
-                        <button type="button" v-on:click="guardar (articulo)" >
+                        <button type="button" class="btn btn-primary" v-on:click="guardar (articulo)" >
                             Nombre: {{articulo.name}}    Descripcion: {{articulo.descripcion}}
                         </button>
                           
