@@ -55,7 +55,10 @@
                 </div>
                 <div v-for="(articulo, index) in filteredArticulos" :key="index">
                       <ul v-show="verArticulos">
-                        Nombre: {{articulo.name}}    Descripcion: {{articulo.descripcion}}
+                        <button type="button" v-on:click="guardar (articulo)" >
+                            Nombre: {{articulo.name}}    Descripcion: {{articulo.descripcion}}
+                        </button>
+                          
                       </ul>
                     </div>
               </div>
@@ -121,13 +124,14 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  articulos:[
+ const articulos=[
     {name:'Tros', descripcion:'Es de 2 metros'},
     {name:'Luz blanca', descripcion:'Alto voltaje'},
     {name:'Pantalla',descripcion:'Tamaño 20 pulgdas'}
-  ],
+  ]
+export default {
+  name: 'app',
+ 
   data () {
     return {
       msg: 1,
@@ -138,11 +142,7 @@ export default {
       verClientes:false,
       verArticulos:false,
       verEmpresa:false,
-      articulos:[
-        {name:'Tros', descripcion:'Es de 2 metros'},
-        {name:'Luz blanca', descripcion:'Alto voltaje'},
-        {name:'Pantalla',descripcion:'Tamaño 20 pulgdas'}
-      ],
+      articulos:[] = articulos,
       Clientes:[
         {name:'Jose arturo', telefono:'89792734', correo:'jose17971@outlook.es'},
         {name:'Jose antonio', telefono:'89792734', correo:'jose17971@outlook.es'},
@@ -177,6 +177,9 @@ export default {
     }
   }, 
   methods:{
+    datos(){
+      this.articulos=articulos
+    },
     poderVer(){
       this.verClientes=true
     },
@@ -194,6 +197,9 @@ export default {
     },
     noVerEmpresa(){
       this.verEmpresa=false
+    },
+    guardar(item){
+      this.articulos.push(item)
     }
   }
 }
